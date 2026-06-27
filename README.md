@@ -1,96 +1,12 @@
 # HoneyPush 督蜜
 
-**Production:** [https://honeypush.vercel.app](https://honeypush.vercel.app)  
-**Demo video:** [Bilibili — HoneyPush 督蜜 demo](https://www.bilibili.com/video/BV1FqVh6xEuH/)  
-**Product spec:** [docs/PRODUCT.md](docs/PRODUCT.md)
-
-**Access note:** The production site is hosted on Vercel. Users in mainland China may need a **VPN** to open [https://honeypush.vercel.app/](https://honeypush.vercel.app/).
-
+**生产环境：** [https://honeypush.vercel.app](https://honeypush.vercel.app)  
+**产品文档：** [docs/PRODUCT.md](docs/PRODUCT.md)  
 **访问说明：** 生产环境托管于 Vercel，**中国大陆用户访问可能需要 VPN**。
-
----
-
-## English
-
-### What this project does & how users interact
-
-HoneyPush is an AI-powered scheduling and gamified supervision app for students and knowledge workers.
-
-Typical flow:
-1. **Plan** — Sign in, add tasks (natural language or manual), set availability, run AI scheduling.
-2. **Execute** — Enter supervision mode, pick an officer, complete camera enrollment, run 25/5 focus blocks.
-3. **Accountability** — Local CV detects distraction; officer reacts; block success/failure is recorded.
-4. **Review** — Open the performance view for focus history and completion trends.
-
-**Flow:** sign up → describe tasks → AI schedule → supervision → finish blocks → review.
-
-### How AI is used
-
-| Area | Technology | Role |
-|---|---|---|
-| Task parsing | LLM (`/api/ai-parse-task`) | Structured tasks from free text |
-| Smart scheduling | LLM + server (`/api/ai-schedule`) | Calendar blocks from priority + availability |
-| Supervision CV | `face-api.js` (browser) | Face enrollment & presence |
-| Distraction hints | TensorFlow.js + COCO-SSD (optional) | Phone-use/distraction heuristics |
-| Officer feedback | Pre-authored video states | Event-driven reactions (not generative video) |
-
-LLM calls run on the server only (`LLM_API_KEY` / `OPENAI_API_KEY`). Rule-based fallback is used when no key is configured.
-
-### Injective integration
-
-Focus coins may evolve into an Injective on-chain token, with wallet claiming, streak rewards, and leaderboard/achievement settlement. This part is not implemented yet.
-
-### Local development
-
-```bash
-docker compose up -d   # PostgreSQL (or: bun run db:up)
-bun install
-cp .env.example .env
-bun run db:migrate
-bun dev
-```
-
-Default DB: `postgresql://postgres:postgres@localhost:5432/honeypush`  
-App: [http://localhost:3000](http://localhost:3000)
-
-If `bun install` stalls on `sharp`:
-
-```bash
-SHARP_IGNORE_GLOBAL_LIBVIPS=1 bun install
-```
-
-### Environment variables
-
-| Variable | Description |
-|---|---|
-| `DATABASE_URL` | PostgreSQL connection string (required) |
-| `LLM_API_KEY` | AI parse & schedule key (optional) |
-| `LLM_BASE_URL` | Default `https://api.openai.com/v1` |
-| `LLM_MODEL` | Default `gpt-4o-mini` |
-| `EAZO_PRIVATE_KEY` | Eazo embed session decrypt key |
-
-Aliases: `OPENAI_API_KEY`, `OPENAI_BASE_URL`, `OPENAI_MODEL`.
-
-### Deploy (Vercel)
-
-```bash
-vercel deploy --prod
-```
-
-Set `DATABASE_URL` (e.g. Neon) in Vercel. Migrations run via `vercel.json` → `scripts/vercel-build.mjs`.  
-Optional: `CRON_SECRET` for daily digest. `*.vercel.app` may need VPN in mainland China.
-
-### Learn more
-
-- [Next.js Documentation](https://nextjs.org/docs)
 
 ---
 
 ## 中文
-
-**生产环境：** [https://honeypush.vercel.app](https://honeypush.vercel.app)  
-**演示视频：** [Bilibili — HoneyPush 督蜜 demo](https://www.bilibili.com/video/BV1FqVh6xEuH/)  
-**访问说明：** 生产环境托管于 Vercel，**中国大陆用户访问可能需要 VPN**。
 
 ### 项目做什么、用户如何使用
 
@@ -116,9 +32,9 @@ HoneyPush 是一个结合 AI 排期与游戏化监督执行的效率产品，面
 
 LLM 仅在服务端调用（`LLM_API_KEY` / `OPENAI_API_KEY`），未配置时有规则兜底。
 
-### Injective 集成说明
+### 代币集成说明
 
-「专注币」可演进为 Injective 链上代币，结合钱包领取、连续专注奖励、排行榜/成就结算。该部分尚未实现。
+「专注币」可演进为链上代币，结合钱包领取、连续专注奖励、排行榜/成就结算。该部分尚未实现。
 
 ### 本地开发
 
@@ -161,5 +77,85 @@ vercel deploy --prod
 可选：`CRON_SECRET`（每日提醒）。中国大陆访问 `*.vercel.app` 可能需要 VPN。
 
 ### 延伸阅读
+
+- [Next.js Documentation](https://nextjs.org/docs)
+
+---
+
+## English
+
+**Production:** [https://honeypush.vercel.app](https://honeypush.vercel.app)  
+**Product spec:** [docs/PRODUCT.md](docs/PRODUCT.md)  
+**Access note:** The production site is hosted on Vercel. Users in mainland China may need a **VPN** to open [https://honeypush.vercel.app/](https://honeypush.vercel.app/).
+
+### What this project does & how users interact
+
+HoneyPush is an AI-powered scheduling and gamified supervision app for students and knowledge workers.
+
+Typical flow:
+1. **Plan** — Sign in, add tasks (natural language or manual), set availability, run AI scheduling.
+2. **Execute** — Enter supervision mode, pick an officer, complete camera enrollment, run 25/5 focus blocks.
+3. **Accountability** — Local CV detects distraction; officer reacts; block success/failure is recorded.
+4. **Review** — Open the performance view for focus history and completion trends.
+
+**Flow:** sign up → describe tasks → AI schedule → supervision → finish blocks → review.
+
+### How AI is used
+
+| Area | Technology | Role |
+|---|---|---|
+| Task parsing | LLM (`/api/ai-parse-task`) | Structured tasks from free text |
+| Smart scheduling | LLM + server (`/api/ai-schedule`) | Calendar blocks from priority + availability |
+| Supervision CV | `face-api.js` (browser) | Face enrollment & presence |
+| Distraction hints | TensorFlow.js + COCO-SSD (optional) | Phone-use/distraction heuristics |
+| Officer feedback | Pre-authored video states | Event-driven reactions (not generative video) |
+
+LLM calls run on the server only (`LLM_API_KEY` / `OPENAI_API_KEY`). Rule-based fallback is used when no key is configured.
+
+### Token integration
+
+Focus coins may evolve into an on-chain token, with wallet claiming, streak rewards, and leaderboard/achievement settlement. This part is not implemented yet.
+
+### Local development
+
+```bash
+docker compose up -d   # PostgreSQL (or: bun run db:up)
+bun install
+cp .env.example .env
+bun run db:migrate
+bun dev
+```
+
+Default DB: `postgresql://postgres:postgres@localhost:5432/honeypush`  
+App: [http://localhost:3000](http://localhost:3000)
+
+If `bun install` stalls on `sharp`:
+
+```bash
+SHARP_IGNORE_GLOBAL_LIBVIPS=1 bun install
+```
+
+### Environment variables
+
+| Variable | Description |
+|---|---|
+| `DATABASE_URL` | PostgreSQL connection string (required) |
+| `LLM_API_KEY` | AI parse & schedule key (optional) |
+| `LLM_BASE_URL` | Default `https://api.openai.com/v1` |
+| `LLM_MODEL` | Default `gpt-4o-mini` |
+| `EAZO_PRIVATE_KEY` | Eazo embed session decrypt key |
+
+Aliases: `OPENAI_API_KEY`, `OPENAI_BASE_URL`, `OPENAI_MODEL`.
+
+### Deploy (Vercel)
+
+```bash
+vercel deploy --prod
+```
+
+Set `DATABASE_URL` (e.g. Neon) in Vercel. Migrations run via `vercel.json` → `scripts/vercel-build.mjs`.  
+Optional: `CRON_SECRET` for daily digest. `*.vercel.app` may need VPN in mainland China.
+
+### Learn more
 
 - [Next.js Documentation](https://nextjs.org/docs)

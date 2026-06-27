@@ -19,3 +19,10 @@ npm-debug.log*
 # typescript
 *.tsbuildinfo
 .env*
+
+# docs: only PRODUCT.md is published to GitHub; other docs stay local
+docs/**
+!docs/PRODUCT.md
+
+# scripts: demo SRT generator stays local
+scripts/generate-product-demo-srt.mjs
