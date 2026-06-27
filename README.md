@@ -1,10 +1,10 @@
 # DuMe 督蜜
 
-**Production:** [https://dume.vercel.app](https://dume.vercel.app)  
+**Production:** [https://dume-liart.vercel.app](https://dume-liart.vercel.app)  
 **Demo video:** [Bilibili — DuMe 督蜜 demo](https://www.bilibili.com/video/BV1FqVh6xEuH/)  
 **Product spec:** [docs/PRODUCT.md](docs/PRODUCT.md)
 
-Users in mainland China may need a VPN to open [https://dume.vercel.app/](https://dume.vercel.app/) (hosted on Vercel).
+Users in mainland China may need a VPN to open [https://dume-liart.vercel.app/](https://dume-liart.vercel.app/) (hosted on Vercel).
 
 ---
 

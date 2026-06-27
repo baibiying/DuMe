@@ -34,6 +34,6 @@
 字幕：专注币 → Injective（规划中）
 
 【分镜8 | 02:50-03:00】
-画面：全屏字卡 dume.vercel.app；小字中国大陆访问可能需要VPN
-旁白：打开 dume.vercel.app，从「不知道先做什么」，到「有人盯着你做完」。DuMe，让专注不再孤单。
-字幕：dume.vercel.app · DuMe 督蜜
+画面：全屏字卡 dume-liart.vercel.app；小字中国大陆访问可能需要VPN
+旁白：打开 dume-liart.vercel.app，从「不知道先做什么」，到「有人盯着你做完」。DuMe，让专注不再孤单。
+字幕：dume-liart.vercel.app · DuMe 督蜜

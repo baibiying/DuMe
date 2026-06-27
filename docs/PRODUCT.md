@@ -1,6 +1,7 @@
 # DuMe Product Document
 
-> **DuMe** — AI scheduling + gamified video supervision
+> **DuMe** — AI scheduling + gamified video supervision  
+> **Production:** [https://dume-liart.vercel.app](https://dume-liart.vercel.app)
 
 DuMe helps students and knowledge workers turn messy to-dos into focused execution: plan with AI, supervise with camera-based accountability, then review performance.
 
@@ -84,7 +85,8 @@ Focus coins may evolve into an Injective on-chain token, with wallet claiming, s
 
 # DuMe 产品文档
 
-> **DuMe** — AI 智能排期 + 游戏化视频监督
+> **DuMe** — AI 智能排期 + 游戏化视频监督  
+> **生产地址：** [https://dume-liart.vercel.app](https://dume-liart.vercel.app)
 
 `DuMe` 致力于解决「多线任务优先级混乱」与「执行期间沉迷手机」，帮助用户重塑时间感知与专注力：先用 AI 做规划，再通过监督执行，最后复盘提升。
 
