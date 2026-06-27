@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import {
   KeyRound,
   LogIn,
@@ -19,7 +19,7 @@ import {
   DialogDescription,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { isNetworkRequestError } from "@/lib/api/request";
+import { isNetworkRequestError, request } from "@/lib/api/request";
 import { useAuth } from "./auth-provider";
 import { GameScrollWoodSeal } from "@/components/screens/performance/game-scroll-ui";
 import { useI18n } from "@/i18n/i18n-provider";
@@ -68,6 +68,15 @@ export function AuthModal() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (!modalOpen) return;
+    void request("/api/auth/me", {
+      cache: "no-store",
+      retries: 0,
+      signal: AbortSignal.timeout(4_000),
+    }).catch(() => {});
+  }, [modalOpen]);
 
   const resetForms = () => {
     setLoginEmail("");

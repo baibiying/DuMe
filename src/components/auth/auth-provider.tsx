@@ -44,6 +44,10 @@ type AuthContextValue = {
 
 const AuthContext = createContext<AuthContextValue | null>(null);
 
+const AUTH_ME_TIMEOUT_MS = 5_000;
+/** Register hashes password server-side; allow extra time on cold starts. */
+const AUTH_WRITE_TIMEOUT_MS = 25_000;
+
 async function readErrorMessage(response: Response, fallback: string) {
   const payload = await response.json().catch(() => null);
   return payload?.error ?? fallback;
@@ -53,7 +57,7 @@ async function fetchCurrentUser() {
   const res = await request("/api/auth/me", {
     cache: "no-store",
     retries: 0,
-    signal: AbortSignal.timeout(5_000),
+    signal: AbortSignal.timeout(AUTH_ME_TIMEOUT_MS),
   });
   const data = await res.json().catch(() => ({ user: null }));
   return (data?.user ?? null) as AuthUser | null;
@@ -129,6 +133,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(input),
+      retries: 0,
+      signal: AbortSignal.timeout(AUTH_WRITE_TIMEOUT_MS),
     });
 
     if (!res.ok) {
@@ -146,6 +152,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(input),
+        retries: 0,
+        signal: AbortSignal.timeout(AUTH_WRITE_TIMEOUT_MS),
       });
 
       if (!res.ok) {

@@ -11,6 +11,8 @@ import {
   normalizeEmail,
 } from "@/lib/auth/session";
 
+export const maxDuration = 30;
+
 export async function POST(req: NextRequest) {
   const body = await req.json().catch(() => null);
   const email = normalizeEmail(String(body?.email ?? ""));

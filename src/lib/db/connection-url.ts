@@ -14,12 +14,17 @@ export function isProductionRuntime() {
 
 /** Vercel + Neon integration may inject POSTGRES_URL instead of DATABASE_URL. */
 export function readDatabaseUrlFromEnv(): string | undefined {
-  return (
-    process.env.DATABASE_URL?.trim() ||
+  const pooled =
     process.env.POSTGRES_URL?.trim() ||
-    process.env.POSTGRES_PRISMA_URL?.trim() ||
-    undefined
-  );
+    process.env.POSTGRES_PRISMA_URL?.trim();
+  const direct = process.env.DATABASE_URL?.trim();
+
+  // Serverless runtimes should prefer Neon/Vercel pooled URLs when available.
+  if (isProductionRuntime()) {
+    return pooled || direct || undefined;
+  }
+
+  return direct || pooled || undefined;
 }
 
 /** Connection string for app runtime and migrations. */
