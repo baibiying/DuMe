@@ -52,6 +52,8 @@ async function readErrorMessage(response: Response, fallback: string) {
 async function fetchCurrentUser() {
   const res = await request("/api/auth/me", {
     cache: "no-store",
+    retries: 0,
+    signal: AbortSignal.timeout(10_000),
   });
   const data = await res.json().catch(() => ({ user: null }));
   return (data?.user ?? null) as AuthUser | null;
@@ -75,10 +77,17 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     let cancelled = false;
 
     const syncUser = async () => {
-      const nextUser = await fetchCurrentUser();
-      if (cancelled) return;
-      setUser(nextUser);
-      setLoading(false);
+      try {
+        const nextUser = await fetchCurrentUser();
+        if (cancelled) return;
+        setUser(nextUser);
+      } catch (err) {
+        if (cancelled) return;
+        console.error("[auth] syncUser failed:", err);
+        setUser(null);
+      } finally {
+        if (!cancelled) setLoading(false);
+      }
     };
 
     void syncUser();

@@ -27,6 +27,11 @@ function isRetryableNetworkError(error: unknown) {
   );
 }
 
+/** True when fetch failed before reaching the server (VPN, offline, timeout, etc.). */
+export function isNetworkRequestError(error: unknown) {
+  return isRetryableNetworkError(error);
+}
+
 function isRetryableStatus(status: number) {
   return status === 408 || status === 429 || status >= 500;
 }

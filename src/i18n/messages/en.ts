@@ -59,6 +59,7 @@ export const enMessages: Messages = {
     loginFailed: "Sign-in failed. Try again.",
     registerFailed: "Sign-up failed. Try again.",
     requestFailed: "Request failed. Try again later.",
+    networkError: "Network connection failed. Check your connection or try a VPN, then retry.",
     tabsAria: "Log in or sign up",
   },
   hub: {
