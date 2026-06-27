@@ -1,7 +1,7 @@
 # DuMe 督蜜 — Demo 视频剧本（≤3 分钟）
 
 > **可直接导入剪映的文件** → [`docs/demo-video/`](demo-video/)（含 `.srt`、图文成片 `.txt`、分镜 `.txt` 与 [`剪映导入说明.md`](demo-video/剪映导入说明.md)）  
-> 生产地址：https://dume-liart.vercel.app  
+> 生产地址：https://dume-liart.vercel.app（**中国大陆访问可能需要 VPN**）  
 > 建议总时长：约 3 分钟
 
 ---

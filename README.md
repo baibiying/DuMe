@@ -4,7 +4,9 @@
 **Demo video:** [Bilibili — DuMe 督蜜 demo](https://www.bilibili.com/video/BV1FqVh6xEuH/)  
 **Product spec:** [docs/PRODUCT.md](docs/PRODUCT.md)
 
-Users in mainland China may need a VPN to open [https://dume-liart.vercel.app/](https://dume-liart.vercel.app/) (hosted on Vercel).
+**Access note:** The production site is hosted on Vercel. Users in mainland China may need a **VPN** to open [https://dume-liart.vercel.app/](https://dume-liart.vercel.app/).
+
+**访问说明：** 生产环境托管于 Vercel，**中国大陆用户访问可能需要 VPN**。
 
 ---
 
