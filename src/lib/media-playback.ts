@@ -14,7 +14,7 @@ function getPoolContainer() {
   if (typeof document === "undefined") return null;
   if (!poolContainer) {
     poolContainer = document.createElement("div");
-    poolContainer.id = "dume-video-preload-pool";
+    poolContainer.id = "honeypush-video-preload-pool";
     poolContainer.setAttribute("aria-hidden", "true");
     poolContainer.style.cssText =
       "position:fixed;width:0;height:0;overflow:hidden;opacity:0;pointer-events:none;left:-9999px;top:-9999px";

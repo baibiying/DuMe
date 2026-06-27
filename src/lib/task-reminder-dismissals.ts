@@ -1,6 +1,6 @@
 import { buildTaskReminderKey, type ScheduledTaskLike } from "@/lib/schedule-execution";
 
-const DISMISSED_STORAGE_KEY = "dume-task-reminder-dismissed-v1";
+const DISMISSED_STORAGE_KEY = "honeypush-task-reminder-dismissed-v1";
 
 export function loadDismissedReminderKeys(): Set<string> {
   if (typeof window === "undefined") return new Set();

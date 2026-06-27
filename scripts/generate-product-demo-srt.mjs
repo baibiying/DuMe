@@ -12,7 +12,7 @@ const SEGMENTS = [
     file: "home page.mp4",
     duration: 12,
     cues: [
-      [0, 5, "DuMe 督蜜：AI 智能排期 + 游戏化视频监督。"],
+      [0, 5, "HoneyPush 督蜜：AI 智能排期 + 游戏化视频监督。"],
       [5, 12, "帮你把待办变成可执行的专注计划。"],
     ],
   },
@@ -150,14 +150,14 @@ const fs = await import("node:fs");
 const path = await import("node:path");
 
 const outDir = path.join(path.join(process.cwd(), "docs/demo-video"));
-const outFile = path.join(outDir, "DuMe_Product_Demo.srt");
-const manifestFile = path.join(outDir, "DuMe_Product_Demo_剪辑顺序.txt");
+const outFile = path.join(outDir, "HoneyPush_Product_Demo.srt");
+const manifestFile = path.join(outDir, "HoneyPush_Product_Demo_剪辑顺序.txt");
 
 fs.mkdirSync(outDir, { recursive: true });
 fs.writeFileSync(outFile, srt, "utf8");
 
 const manifest = [
-  "# DuMe 产品演示 — 剪映剪辑顺序（≤3 分钟）",
+  "# HoneyPush 产品演示 — 剪映剪辑顺序（≤3 分钟）",
   "",
   `字幕总时长：${formatSrtTime(totalSeconds)}（${totalSeconds} 秒）`,
   "",
@@ -170,7 +170,7 @@ const manifest = [
     return `| ${i + 1} | ${s.file} | ${s.duration}s | ${raw ? `${raw.toFixed(0)}s` : "—"} |`;
   }),
   "",
-  "字幕：DuMe_Product_Demo.srt",
+  "字幕：HoneyPush_Product_Demo.srt",
   "剪映：文本 → 导入字幕（UTF-8）→ 文本朗读",
   "",
   "提示：原片合计约 5 分 14 秒，成片需剪到 3 分钟内；monitor failure.mp4 建议只保留关键片段。",

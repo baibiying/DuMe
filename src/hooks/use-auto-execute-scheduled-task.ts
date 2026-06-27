@@ -8,7 +8,7 @@ import {
   type ScheduledTaskLike,
 } from "@/lib/schedule-execution";
 
-const AUTO_EXECUTE_STORAGE_KEY = "dume-auto-execute-v1";
+const AUTO_EXECUTE_STORAGE_KEY = "honeypush-auto-execute-v1";
 const RETRY_MS = 5_000;
 const MAX_SCHEDULE_MS = 7 * 24 * 60 * 60 * 1000;
 

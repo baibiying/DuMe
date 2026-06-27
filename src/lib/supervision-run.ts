@@ -1,8 +1,8 @@
 import { emitClientEvent } from "@/lib/client-events";
 import type { SupervisionFocusBlock } from "@/lib/supervision-blocks";
 
-export const SUPERVISION_RUN_STORAGE_KEY = "dume-supervision-run-v1";
-export const SUPERVISION_CHANGED_EVENT = "dume:supervision-changed";
+export const SUPERVISION_RUN_STORAGE_KEY = "honeypush-supervision-run-v1";
+export const SUPERVISION_CHANGED_EVENT = "honeypush:supervision-changed";
 
 export type SupervisionRun = {
   taskId: number;

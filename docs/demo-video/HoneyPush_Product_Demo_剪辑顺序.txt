@@ -1,4 +1,4 @@
-# DuMe 产品演示 — 剪映剪辑顺序（≤3 分钟）
+# HoneyPush 产品演示 — 剪映剪辑顺序（≤3 分钟）
 
 字幕总时长：00:03:00,000（180 秒）
 
@@ -19,7 +19,7 @@
 | 11 | monitor success.mp4 | 8s | 9s |
 | 12 | performance.mp4 | 13s | 15s |
 
-字幕：DuMe_Product_Demo.srt
+字幕：HoneyPush_Product_Demo.srt
 剪映：文本 → 导入字幕（UTF-8）→ 文本朗读
 
 提示：原片合计约 5 分 14 秒，成片需剪到 3 分钟内；monitor failure.mp4 建议只保留关键片段。

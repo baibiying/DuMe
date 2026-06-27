@@ -1,16 +1,16 @@
 services:
   postgres:
     image: postgres:16
-    container_name: dume-postgres
+    container_name: honeypush-postgres
     restart: unless-stopped
     ports:
       - "5432:5432"
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: dume
+      POSTGRES_DB: honeypush
     volumes:
-      - dume_pg_data:/var/lib/postgresql/data
+      - honeypush_pg_data:/var/lib/postgresql/data
 
 volumes:
-  dume_pg_data:
+  honeypush_pg_data:

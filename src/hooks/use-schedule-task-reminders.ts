@@ -11,7 +11,7 @@ import {
 import { isTaskReminderDismissed } from "@/lib/task-reminder-dismissals";
 import { useI18n } from "@/i18n/i18n-provider";
 
-const REMINDER_STORAGE_KEY = "dume-task-reminder-sent-v1";
+const REMINDER_STORAGE_KEY = "honeypush-task-reminder-sent-v1";
 
 function loadSentReminderKeys(): Set<string> {
   if (typeof window === "undefined") return new Set();
@@ -81,7 +81,7 @@ export function useScheduleTaskReminders({
       if (!enableBrowserNotification || typeof window === "undefined") return;
       if (!("Notification" in window) || Notification.permission !== "granted") return;
       try {
-        new Notification(title, { body, tag: "dume-task-reminder" });
+        new Notification(title, { body, tag: "honeypush-task-reminder" });
       } catch {
         /* ignore */
       }

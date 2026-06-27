@@ -36,7 +36,7 @@ export const enMessages: Messages = {
     logout: "Log out",
   },
   auth: {
-    cloudSave: "DUME · CLOUD SAVE",
+    cloudSave: "HONEYPUSH · CLOUD SAVE",
     checkpoint: "Base checkpoint · Sync tasks & stats after sign-in",
     tabLogin: "Return",
     tabRegister: "Recruit",
@@ -54,7 +54,7 @@ export const enMessages: Messages = {
     submitRegister: "Claim pass",
     submittingLogin: "Verifying…",
     submittingRegister: "Creating profile…",
-    terms: "By signing in you agree to DuMe supervision terms",
+    terms: "By signing in you agree to HoneyPush supervision terms",
     passwordMismatch: "Passwords do not match",
     loginFailed: "Sign-in failed. Try again.",
     registerFailed: "Sign-up failed. Try again.",
@@ -125,7 +125,7 @@ export const enMessages: Messages = {
     officer: "Pick officer",
   },
   prompts: {
-    saveTask: "Sign in to save tasks to DuMe.",
+    saveTask: "Sign in to save tasks to HoneyPush.",
     createTask: "Sign in to create and save tasks.",
     editTask: "Sign in to edit tasks.",
     deleteTask: "Sign in to delete tasks.",

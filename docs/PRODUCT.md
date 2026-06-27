@@ -1,16 +1,17 @@
-# DuMe Product Document
+# HoneyPush Product Document
 
-> **DuMe** — AI scheduling + gamified video supervision  
-> **Production:** [https://dume-liart.vercel.app](https://dume-liart.vercel.app)  
+> **HoneyPush** — AI scheduling + gamified video supervision  
+> **Production:** [https://honeypush.vercel.app](https://honeypush.vercel.app)  
+> **Demo video:** [Bilibili — HoneyPush 督蜜 demo](https://www.bilibili.com/video/BV1FqVh6xEuH/)  
 > **Access:** Hosted on Vercel; users in mainland China may need a **VPN** to reach the production URL.
 
-DuMe helps students and knowledge workers turn messy to-dos into focused execution: plan with AI, supervise with camera-based accountability, then review performance.
+HoneyPush helps students and knowledge workers turn messy to-dos into focused execution: plan with AI, supervise with camera-based accountability, then review performance.
 
 ---
 
 ## 1) Background
 
-Productivity tools often split into passive planners (no execution help) and harsh lock-down apps (hard to sustain). DuMe closes the loop: **AI planning → supervised execution → feedback**.
+Productivity tools often split into passive planners (no execution help) and harsh lock-down apps (hard to sustain). HoneyPush closes the loop: **AI planning → supervised execution → feedback**.
 
 ---
 
@@ -84,19 +85,20 @@ Focus coins may evolve into an Injective on-chain token, with wallet claiming, s
 
 ---
 
-# DuMe 产品文档
+# HoneyPush 产品文档
 
-> **DuMe** — AI 智能排期 + 游戏化视频监督  
-> **生产地址：** [https://dume-liart.vercel.app](https://dume-liart.vercel.app)  
+> **HoneyPush** — AI 智能排期 + 游戏化视频监督  
+> **生产地址：** [https://honeypush.vercel.app](https://honeypush.vercel.app)  
+> **Demo 视频：** [Bilibili — HoneyPush 督蜜 demo](https://www.bilibili.com/video/BV1FqVh6xEuH/)  
 > **访问说明：** 生产环境托管于 Vercel，**中国大陆访问可能需要 VPN**。
 
-`DuMe` 致力于解决「多线任务优先级混乱」与「执行期间沉迷手机」，帮助用户重塑时间感知与专注力：先用 AI 做规划，再通过监督执行，最后复盘提升。
+`HoneyPush` 致力于解决「多线任务优先级混乱」与「执行期间沉迷手机」，帮助用户重塑时间感知与专注力：先用 AI 做规划，再通过监督执行，最后复盘提升。
 
 ---
 
 ## 1）背景
 
-现有效率工具往往走向两个极端：纯规划工具难落地，强限制工具难坚持。DuMe 目标是形成闭环：**AI 规划 → 监督执行 → 反馈复盘**。
+现有效率工具往往走向两个极端：纯规划工具难落地，强限制工具难坚持。HoneyPush 目标是形成闭环：**AI 规划 → 监督执行 → 反馈复盘**。
 
 ---
 

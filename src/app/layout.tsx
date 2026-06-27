@@ -16,7 +16,7 @@ const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL?.trim() ||
   (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : undefined);
 
-const APP_NAME = "DuMe 督蜜";
+const APP_NAME = "HoneyPush 督蜜";
 const APP_DESCRIPTION =
   "AI 智能排期 + 游戏化监督，理清任务、专注执行。监督官陪你 25 分钟，摸鱼当场抓包。";
 
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   icons: { icon: "/opengraph-image" },
   openGraph: {
     type: "website",
-    siteName: "DuMe",
+    siteName: "HoneyPush",
     title: APP_NAME,
     description: APP_DESCRIPTION,
     url: "/",

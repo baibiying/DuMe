@@ -34,7 +34,7 @@ export const zhMessages = {
     logout: "退出",
   },
   auth: {
-    cloudSave: "DUME · 云端存档",
+    cloudSave: "HONEYPUSH · 云端存档",
     checkpoint: "基地检查站 · 登入后同步任务与战绩",
     tabLogin: "归队登入",
     tabRegister: "新兵注册",
@@ -123,7 +123,7 @@ export const zhMessages = {
     officer: "选择监督官",
   },
   prompts: {
-    saveTask: "登录后才能把任务保存到 DuMe。",
+    saveTask: "登录后才能把任务保存到 HoneyPush。",
     createTask: "登录后才能创建并保存任务。",
     editTask: "登录后才能修改任务。",
     deleteTask: "登录后才能删除任务。",

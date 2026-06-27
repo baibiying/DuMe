@@ -10,7 +10,7 @@ import {
 import { db } from "@/lib/db/client";
 import { users } from "@/lib/db/schema";
 
-const SESSION_COOKIE_NAME = "dume_session";
+const SESSION_COOKIE_NAME = "honeypush_session";
 const SESSION_DURATION_MS = 1000 * 60 * 60 * 24 * 30;
 
 export type AuthUser = {

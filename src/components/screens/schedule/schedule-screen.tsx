@@ -42,8 +42,8 @@ import {
 } from "@/lib/ai/availability";
 import { excludePastDeadlineTasks } from "@/lib/schedule-execution";
 
-const AVAILABILITY_STORAGE_KEY = "dume-availability-v1";
-const SCHEDULE_SNAPSHOT_KEY = "dume-schedule-snapshot-v1";
+const AVAILABILITY_STORAGE_KEY = "honeypush-availability-v1";
+const SCHEDULE_SNAPSHOT_KEY = "honeypush-schedule-snapshot-v1";
 
 type ScheduleSnapshot = {
   availability: string;

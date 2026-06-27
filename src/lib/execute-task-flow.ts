@@ -1,6 +1,6 @@
 import { enterSupervisionTakeover } from "@/lib/supervision-takeover";
 
-export const EXECUTE_TASK_STORAGE_KEY = "dume-execute-task-v1";
+export const EXECUTE_TASK_STORAGE_KEY = "honeypush-execute-task-v1";
 
 export type ExecuteTaskPayload = {
   taskId: number;

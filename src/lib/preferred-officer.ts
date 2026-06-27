@@ -2,8 +2,8 @@ import { emitClientEvent } from "@/lib/client-events";
 import { preloadOfficerVideos } from "@/lib/officers/preload-officer-videos";
 import { OFFICERS, type OfficerId } from "@/lib/officers-data";
 
-export const PREFERRED_OFFICER_STORAGE_KEY = "dume-preferred-officer-v1";
-export const PREFERRED_OFFICER_CHANGED_EVENT = "dume:preferred-officer-changed";
+export const PREFERRED_OFFICER_STORAGE_KEY = "honeypush-preferred-officer-v1";
+export const PREFERRED_OFFICER_CHANGED_EVENT = "honeypush:preferred-officer-changed";
 
 const VALID_IDS = new Set(OFFICERS.map((o) => o.id));
 

@@ -1,10 +1,10 @@
-# DuMe 督蜜
+# HoneyPush 督蜜
 
-**Production:** [https://dume-liart.vercel.app](https://dume-liart.vercel.app)  
-**Demo video:** [Bilibili — DuMe 督蜜 demo](https://www.bilibili.com/video/BV1FqVh6xEuH/)  
+**Production:** [https://honeypush.vercel.app](https://honeypush.vercel.app)  
+**Demo video:** [Bilibili — HoneyPush 督蜜 demo](https://www.bilibili.com/video/BV1FqVh6xEuH/)  
 **Product spec:** [docs/PRODUCT.md](docs/PRODUCT.md)
 
-**Access note:** The production site is hosted on Vercel. Users in mainland China may need a **VPN** to open [https://dume-liart.vercel.app/](https://dume-liart.vercel.app/).
+**Access note:** The production site is hosted on Vercel. Users in mainland China may need a **VPN** to open [https://honeypush.vercel.app/](https://honeypush.vercel.app/).
 
 **访问说明：** 生产环境托管于 Vercel，**中国大陆用户访问可能需要 VPN**。
 
@@ -14,7 +14,7 @@
 
 ### What this project does & how users interact
 
-DuMe is an AI-powered scheduling and gamified supervision app for students and knowledge workers.
+HoneyPush is an AI-powered scheduling and gamified supervision app for students and knowledge workers.
 
 Typical flow:
 1. **Plan** — Sign in, add tasks (natural language or manual), set availability, run AI scheduling.
@@ -50,7 +50,7 @@ bun run db:migrate
 bun dev
 ```
 
-Default DB: `postgresql://postgres:postgres@localhost:5432/dume`  
+Default DB: `postgresql://postgres:postgres@localhost:5432/honeypush`  
 App: [http://localhost:3000](http://localhost:3000)
 
 If `bun install` stalls on `sharp`:
@@ -88,9 +88,13 @@ Optional: `CRON_SECRET` for daily digest. `*.vercel.app` may need VPN in mainlan
 
 ## 中文
 
+**生产环境：** [https://honeypush.vercel.app](https://honeypush.vercel.app)  
+**演示视频：** [Bilibili — HoneyPush 督蜜 demo](https://www.bilibili.com/video/BV1FqVh6xEuH/)  
+**访问说明：** 生产环境托管于 Vercel，**中国大陆用户访问可能需要 VPN**。
+
 ### 项目做什么、用户如何使用
 
-DuMe 是一个结合 AI 排期与游戏化监督执行的效率产品，面向学生和知识工作者。
+HoneyPush 是一个结合 AI 排期与游戏化监督执行的效率产品，面向学生和知识工作者。
 
 主要流程：
 1. **规划** — 登录后录入任务（自然语言或手动），设置可用时间，执行 AI 排期。
@@ -126,7 +130,7 @@ bun run db:migrate
 bun dev
 ```
 
-默认连接串：`postgresql://postgres:postgres@localhost:5432/dume`  
+默认连接串：`postgresql://postgres:postgres@localhost:5432/honeypush`  
 访问地址：[http://localhost:3000](http://localhost:3000)
 
 若 `bun install` 在 `sharp` 卡住：

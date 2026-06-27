@@ -1,7 +1,8 @@
-# DuMe 督蜜 — Demo 视频剧本（≤3 分钟）
+# HoneyPush 督蜜 — Demo 视频剧本（≤3 分钟）
 
 > **可直接导入剪映的文件** → [`docs/demo-video/`](demo-video/)（含 `.srt`、图文成片 `.txt`、分镜 `.txt` 与 [`剪映导入说明.md`](demo-video/剪映导入说明.md)）  
-> 生产地址：https://dume-liart.vercel.app（**中国大陆访问可能需要 VPN**）  
+> **演示视频（Bilibili）：** [HoneyPush 督蜜 demo](https://www.bilibili.com/video/BV1FqVh6xEuH/)  
+> 生产地址：https://honeypush.vercel.app（**中国大陆访问可能需要 VPN**）  
 > 建议总时长：约 3 分钟
 
 ---
@@ -10,11 +11,12 @@
 
 | 项 | 建议 |
 |---|---|
-| 标题 | DuMe 督蜜 — AI 排期 + 游戏化监督 |
+| 标题 | HoneyPush 督蜜 — AI 排期 + 游戏化监督 |
+| 录屏来源 | [honeypush.vercel.app](https://honeypush.vercel.app) |
 | 比例 | 16:9（评审投屏）或 9:16（短视频） |
 | 风格 | 科技感 + 轻游戏化；主色橙 #F15A24 |
 | 配乐 | 开场轻快 → 监督段略紧张 → 结尾上扬 |
-| 结尾字卡 | dume-liart.vercel.app · AI 规划 · 摄像头监督 · 本地隐私 |
+| 结尾字卡 | honeypush.vercel.app · AI 规划 · 摄像头监督 · 本地隐私 |
 
 ---
 
@@ -42,10 +44,10 @@
 
 ## 分镜 3｜产品亮相（0:35–0:50）
 
-**画面：** Logo「DuMe 督蜜」；产品首页；标签：AI 排期 / 视频监督 / 本地视觉。
+**画面：** Logo「HoneyPush 督蜜」；产品首页；标签：AI 排期 / 视频监督 / 本地视觉。
 
 **旁白：**  
-DuMe 督蜜，把三件事连成闭环：AI 帮你排好，监督官盯你执行，数据帮你复盘。
+HoneyPush 督蜜，把三件事连成闭环：AI 帮你排好，监督官盯你执行，数据帮你复盘。
 
 **字幕：** AI 规划 → 监督执行 → 复盘成长
 
@@ -108,12 +110,12 @@ DuMe 督蜜，把三件事连成闭环：AI 帮你排好，监督官盯你执行
 
 ## 分镜 8｜结尾 CTA（2:50–3:00）
 
-**画面：** 全屏字卡 dume-liart.vercel.app；小字「中国大陆访问 Vercel 可能需要 VPN」。
+**画面：** 全屏字卡 honeypush.vercel.app；小字「中国大陆访问 Vercel 可能需要 VPN」。
 
 **旁白：**  
-打开 dume-liart.vercel.app，从「不知道先做什么」，到「有人盯着你做完」。DuMe，让专注不再孤单。
+打开 honeypush.vercel.app，从「不知道先做什么」，到「有人盯着你做完」。HoneyPush，让专注不再孤单。
 
-**字幕：** dume-liart.vercel.app · DuMe 督蜜
+**字幕：** honeypush.vercel.app · HoneyPush 督蜜
 
 ---
 
@@ -124,7 +126,7 @@ DuMe 督蜜，把三件事连成闭环：AI 帮你排好，监督官盯你执行
 
 传统效率工具，要么只会帮你列计划，要么管得太死、很难坚持。缺的不是清单，是有人盯着你做完。
 
-DuMe 督蜜，把三件事连成闭环：AI 帮你排好，监督官盯你执行，数据帮你复盘。
+HoneyPush 督蜜，把三件事连成闭环：AI 帮你排好，监督官盯你执行，数据帮你复盘。
 
 不用一条条填表。用自然语言描述任务，AI 会解析截止时间、时长和优先级，再按你的可用时间，生成番茄钟式日程——25 分钟专注，5 分钟休息。排错了？日历上直接改。
 
@@ -134,7 +136,7 @@ DuMe 督蜜，把三件事连成闭环：AI 帮你排好，监督官盯你执行
 
 专注币未来可演进为 Injective 链上激励——连续专注、排行榜与成就结算。链上部分尚在路线图中，核心体验已经可用。
 
-打开 dume-liart.vercel.app，从「不知道先做什么」，到「有人盯着你做完」。DuMe，让专注不再孤单。
+打开 honeypush.vercel.app，从「不知道先做什么」，到「有人盯着你做完」。HoneyPush，让专注不再孤单。
 ```
 
 ---

@@ -1,6 +1,6 @@
 import { unlockBrowserAudioSync } from "@/lib/unlock-browser-audio";
 
-const MUTE_STORAGE_KEY = "dume-game-sfx-muted";
+const MUTE_STORAGE_KEY = "honeypush-game-sfx-muted";
 
 let sharedContext: AudioContext | null = null;
 let lastHoverAt = 0;

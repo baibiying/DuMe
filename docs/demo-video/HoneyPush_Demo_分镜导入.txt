@@ -9,8 +9,8 @@
 字幕：缺的是「执行 + 反馈」
 
 【分镜3 | 00:35-00:50】
-画面：Logo「DuMe 督蜜」；产品首页；标签 AI排期/视频监督/本地视觉
-旁白：DuMe 督蜜，把三件事连成闭环：AI 帮你排好，监督官盯你执行，数据帮你复盘。
+画面：Logo「HoneyPush 督蜜」；产品首页；标签 AI排期/视频监督/本地视觉
+旁白：HoneyPush 督蜜，把三件事连成闭环：AI 帮你排好，监督官盯你执行，数据帮你复盘。
 字幕：AI 规划 → 监督执行 → 复盘成长
 
 【分镜4 | 00:50-01:25】
@@ -34,6 +34,6 @@
 字幕：专注币 → Injective（规划中）
 
 【分镜8 | 02:50-03:00】
-画面：全屏字卡 dume-liart.vercel.app；小字中国大陆访问可能需要VPN
-旁白：打开 dume-liart.vercel.app，从「不知道先做什么」，到「有人盯着你做完」。DuMe，让专注不再孤单。
-字幕：dume-liart.vercel.app · DuMe 督蜜
+画面：全屏字卡 honeypush.vercel.app；小字中国大陆访问可能需要VPN
+旁白：打开 honeypush.vercel.app，从「不知道先做什么」，到「有人盯着你做完」。HoneyPush，让专注不再孤单。
+字幕：honeypush.vercel.app · HoneyPush 督蜜

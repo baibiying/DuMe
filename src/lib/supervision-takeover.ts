@@ -1,7 +1,7 @@
 import { emitClientEvent } from "@/lib/client-events";
 
-export const SUPERVISION_TAKEOVER_STORAGE_KEY = "dume-supervision-takeover-v1";
-export const SUPERVISION_TAKEOVER_EVENT = "dume:supervision-takeover";
+export const SUPERVISION_TAKEOVER_STORAGE_KEY = "honeypush-supervision-takeover-v1";
+export const SUPERVISION_TAKEOVER_EVENT = "honeypush:supervision-takeover";
 
 export type SupervisionTakeoverState = {
   taskId: number;

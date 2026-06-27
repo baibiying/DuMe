@@ -1,5 +1,5 @@
 const DEV_FALLBACK =
-  "postgresql://postgres:postgres@localhost:5432/dume";
+  "postgresql://postgres:postgres@localhost:5432/honeypush";
 
 export function isLocalDatabaseUrl(url: string) {
   return /localhost|127\.0\.0\.1/.test(url);
