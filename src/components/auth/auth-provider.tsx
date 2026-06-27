@@ -8,7 +8,7 @@ import {
   useMemo,
   useState,
 } from "react";
-import { isNetworkRequestError, request } from "@/lib/api/request";
+import { classifyRequestError, request } from "@/lib/api/request";
 import {
   AUTH_CHANGED_EVENT,
   STATS_CHANGED_EVENT,
@@ -44,10 +44,6 @@ type AuthContextValue = {
 
 const AuthContext = createContext<AuthContextValue | null>(null);
 
-const AUTH_ME_TIMEOUT_MS = 5_000;
-/** Register hashes password server-side; allow extra time on cold starts. */
-const AUTH_WRITE_TIMEOUT_MS = 25_000;
-
 async function readErrorMessage(response: Response, fallback: string) {
   const payload = await response.json().catch(() => null);
   return payload?.error ?? fallback;
@@ -56,8 +52,6 @@ async function readErrorMessage(response: Response, fallback: string) {
 async function fetchCurrentUser() {
   const res = await request("/api/auth/me", {
     cache: "no-store",
-    retries: 0,
-    signal: AbortSignal.timeout(AUTH_ME_TIMEOUT_MS),
   });
   const data = await res.json().catch(() => ({ user: null }));
   return (data?.user ?? null) as AuthUser | null;
@@ -81,19 +75,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     let cancelled = false;
 
     const syncUser = async () => {
-      try {
-        const nextUser = await fetchCurrentUser();
-        if (cancelled) return;
-        setUser(nextUser);
-      } catch (err) {
-        if (cancelled) return;
-        if (!isNetworkRequestError(err)) {
-          console.error("[auth] syncUser failed:", err);
-        }
-        setUser(null);
-      } finally {
-        if (!cancelled) setLoading(false);
-      }
+      const nextUser = await fetchCurrentUser();
+      if (cancelled) return;
+      setUser(nextUser);
+      setLoading(false);
     };
 
     void syncUser();
@@ -133,8 +118,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(input),
-      retries: 0,
-      signal: AbortSignal.timeout(AUTH_WRITE_TIMEOUT_MS),
     });
 
     if (!res.ok) {
@@ -152,8 +135,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(input),
-        retries: 0,
-        signal: AbortSignal.timeout(AUTH_WRITE_TIMEOUT_MS),
       });
 
       if (!res.ok) {

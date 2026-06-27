@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, type ReactNode } from "react";
+import { useState, type ReactNode } from "react";
 import {
   KeyRound,
   LogIn,
@@ -19,7 +19,6 @@ import {
   DialogDescription,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { isNetworkRequestError, request } from "@/lib/api/request";
 import { useAuth } from "./auth-provider";
 import { GameScrollWoodSeal } from "@/components/screens/performance/game-scroll-ui";
 import { useI18n } from "@/i18n/i18n-provider";
@@ -38,16 +37,6 @@ const INPUT_CLASS =
   "w-full rounded-lg border-2 border-[#1C1917] bg-[#FFFBF0] px-4 py-3.5 text-[#1C1917] font-bold text-base sm:text-lg shadow-[inset_2px_2px_0_rgba(28,25,23,0.1)] placeholder:text-neutral-500/75 focus-visible:outline-none focus-visible:border-amber-500 focus-visible:ring-2 focus-visible:ring-amber-400/50";
 
 type AuthTab = "login" | "register";
-
-function formatAuthError(
-  err: unknown,
-  fallback: string,
-  networkFallback: string
-) {
-  if (isNetworkRequestError(err)) return networkFallback;
-  if (err instanceof Error && err.message) return err.message;
-  return fallback;
-}
 
 export function AuthModal() {
   const { t } = useI18n();
@@ -68,15 +57,6 @@ export function AuthModal() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    if (!modalOpen) return;
-    void request("/api/auth/me", {
-      cache: "no-store",
-      retries: 0,
-      signal: AbortSignal.timeout(4_000),
-    }).catch(() => {});
-  }, [modalOpen]);
 
   const resetForms = () => {
     setLoginEmail("");
@@ -109,7 +89,7 @@ export function AuthModal() {
       await login({ email: loginEmail, password: loginPassword });
       resetForms();
     } catch (err) {
-      setError(formatAuthError(err, t("auth.loginFailed"), t("auth.networkError")));
+      setError(err instanceof Error ? err.message : t("auth.loginFailed"));
     } finally {
       setSubmitting(false);
     }
@@ -131,7 +111,7 @@ export function AuthModal() {
       });
       resetForms();
     } catch (err) {
-      setError(formatAuthError(err, t("auth.registerFailed"), t("auth.networkError")));
+      setError(err instanceof Error ? err.message : t("auth.registerFailed"));
     } finally {
       setSubmitting(false);
     }

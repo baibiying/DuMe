@@ -57,7 +57,6 @@ export const zhMessages = {
     loginFailed: "登录失败，请重试",
     registerFailed: "注册失败，请重试",
     requestFailed: "请求失败，请稍后重试",
-    networkError: "网络连接失败，请检查网络或开启 VPN 后重试",
     tabsAria: "登录或注册",
   },
   hub: {

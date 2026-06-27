@@ -9,8 +9,6 @@ import {
 } from "@/lib/auth/session";
 import { databaseUnavailableResponse, isDatabaseUnavailableError } from "@/lib/db/errors";
 
-export const maxDuration = 30;
-
 export async function POST(req: NextRequest) {
   const body = await req.json().catch(() => null);
   const email = normalizeEmail(String(body?.email ?? ""));
