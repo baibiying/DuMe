@@ -26,3 +26,6 @@ docs/**
 
 # scripts: demo SRT generator stays local
 scripts/generate-product-demo-srt.mjs
+
+# lockfile: npm uses package-lock.json in repo; bun.lock stays local
+bun.lock
