@@ -8,7 +8,7 @@ import {
   useMemo,
   useState,
 } from "react";
-import { request } from "@/lib/api/request";
+import { isNetworkRequestError, request } from "@/lib/api/request";
 import {
   AUTH_CHANGED_EVENT,
   STATS_CHANGED_EVENT,
@@ -53,7 +53,7 @@ async function fetchCurrentUser() {
   const res = await request("/api/auth/me", {
     cache: "no-store",
     retries: 0,
-    signal: AbortSignal.timeout(10_000),
+    signal: AbortSignal.timeout(5_000),
   });
   const data = await res.json().catch(() => ({ user: null }));
   return (data?.user ?? null) as AuthUser | null;
@@ -83,7 +83,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         setUser(nextUser);
       } catch (err) {
         if (cancelled) return;
-        console.error("[auth] syncUser failed:", err);
+        if (!isNetworkRequestError(err)) {
+          console.error("[auth] syncUser failed:", err);
+        }
         setUser(null);
       } finally {
         if (!cancelled) setLoading(false);

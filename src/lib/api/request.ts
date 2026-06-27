@@ -17,13 +17,16 @@ function isIdempotentMethod(method?: string) {
 }
 
 function isRetryableNetworkError(error: unknown) {
+  if (error instanceof DOMException && error.name === "TimeoutError") return true;
+  if (error instanceof Error && error.name === "TimeoutError") return true;
   if (!(error instanceof TypeError)) return false;
   const msg = error.message.toLowerCase();
   return (
     msg.includes("failed to fetch") ||
     msg.includes("network") ||
     msg.includes("load failed") ||
-    msg.includes("aborted")
+    msg.includes("aborted") ||
+    msg.includes("timed out")
   );
 }
 
